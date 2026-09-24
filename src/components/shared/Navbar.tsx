@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import React from 'react';
+import Image from 'next/image';
+import logo from '@/assets/logo.png'
+
 
 const Navbar = () => {
     return (
@@ -12,22 +15,26 @@ const Navbar = () => {
       <ul
         tabIndex={-1}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-       <Link href="/">Books</Link>
-        
-        <li><a>Item 3</a></li>
+       <li><Link href="/workout">Workout</Link></li>
+       <li><Link href="/my-plan">My Plan</Link></li>
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <div className="flex items-center gap-2 ml-2">
+        <Image src={logo} alt="Logo"/>FITLOG
+    </div>
+
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
+       <li><Link href="/workouts" className="hover:btn btn-soft btn-warning rounded-full">Workouts</Link></li>
+       <li><Link href="/my-plan" className="hover:btn btn-soft btn-warning rounded-full">My Plan</Link></li>
       
-      <li><a>Item 3</a></li>
+     
     </ul>
   </div>
-  <div className="navbar-end">
-    <a className="btn">Button</a>
+  <div className="navbar-end gap-2">
+    <button >Plan</button>
+        <button >Saved</button>
   </div>
 </div>
     );

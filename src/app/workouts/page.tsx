@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Workout = () => {
+const Workouts = () => {
     return (
         <div>
           workout Page
@@ -8,4 +8,4 @@ const Workout = () => {
     );
 };
 
-export default Workout;
+export default Workouts;

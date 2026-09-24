@@ -1,9 +1,12 @@
-import React from 'react';
+import Banner from '@/components/homepage/Banner';
+import Lifts from '@/components/homepage/Workouts';
+
 
 const page = () => {
   return (
     <div>
-      Home Page
+      <Banner/>
+      <Lifts/>
     </div>
   );
 };
