@@ -1,8 +1,18 @@
+
+import { IWorkout } from '@/types/workout.types';
 import Image from 'next/image';
+import Link from 'next/link';
+
 import React from 'react';
 
-const WorkoutCard = ({workout}) => {
+interface IWorkoutPops{
+    workout : IWorkout
+}
+
+const WorkoutCard = ({workout} : IWorkoutPops) => {
     return (
+
+      <Link href={`/workouts/${workout.id}`}>
         <div
   key={workout.id}
   className="group overflow-hidden rounded-xl border border-gray-800 bg-[#17181d] transition duration-300 hover:-translate-y-1 hover:border-lime-400/50"
@@ -78,7 +88,7 @@ const WorkoutCard = ({workout}) => {
      
     </div>
   </div>
-
+   </Link>
     );
 };
 
