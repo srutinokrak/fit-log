@@ -11,7 +11,9 @@ const SavedButton = ({workout}:{workout:IWorkout}) => {
 
 const handleSavedButton = () => {
   
-  console.log('plans triggered',workout);
+  if(saved.some((item) => item.id === workout.id)){
+    return
+  }
   setSaved([...saved,workout])
   toast.success( "Saved for later")
 }

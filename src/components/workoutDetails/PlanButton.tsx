@@ -10,8 +10,10 @@ const PlanButton = ({workout}:{workout:IWorkout}) => {
   const { todaysPlan,setTodaysPlan} = useContext(WorkoutsContext);
 
 const handlePlanButton = () => {
+   if (todaysPlan.some((item) => item.id === workout.id)) {
+    return;
+  }
   
-  console.log('plans triggered',workout);
   setTodaysPlan([...todaysPlan,workout])
   toast.success( "Added to today's plan")
 }

@@ -15,7 +15,7 @@ const WorkoutCard = ({workout} : IWorkoutPops) => {
       <Link href={`/workouts/${workout.id}`}>
         <div
   key={workout.id}
-  className="group overflow-hidden rounded-xl border border-gray-800 bg-[#17181d] transition duration-300 hover:-translate-y-1 hover:border-lime-400/50"
+  className="group overflow-hidden  rounded-xl border border-gray-800 bg-[#17181d] transition duration-300 hover:-translate-y-1 hover:border-lime-400/50"
 >
   {/* Image */}
   <div className="relative h-52 overflow-hidden">

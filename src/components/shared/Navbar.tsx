@@ -1,10 +1,15 @@
+'use client'
+
 import Link from 'next/link';
-import React from 'react';
+import React, { useContext } from 'react';
 import Image from 'next/image';
 import logo from '@/assets/logo.png'
+import { WorkoutsContext } from '@/context/Workoutscontext';
 
 
 const Navbar = () => {
+
+  const { todaysPlan, saved } = useContext(WorkoutsContext);
     return (
         <div className="navbar bg-base-100 shadow-sm">
   <div className="navbar-start">
@@ -26,15 +31,31 @@ const Navbar = () => {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-       <li><Link href="/workouts" className="hover:btn btn-soft btn-warning rounded-full">Workouts</Link></li>
+       <li><Link href="/workouts" className="hover:btn btn-soft btn-warning  rounded-full">Workouts</Link></li>
        <li><Link href="/my-plan" className="hover:btn btn-soft btn-warning rounded-full">My Plan</Link></li>
       
      
     </ul>
   </div>
-  <div className="navbar-end gap-2">
-    <button >Plan</button>
-        <button >Saved</button>
+  <div className="navbar-end flex-wrap gap-2 ">
+     <Link
+          href="/my-plan"
+          className="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-semibold text-white"
+        >
+          <span>Plan</span>
+          <span className="rounded-full  bg-[#ccff00] px-2 py-0.5 text-xs text-black">
+            {todaysPlan.length}
+          </span>
+        </Link>
+        <Link
+          href="/my-plan"
+          className="inline-flex items-center gap-2  px-3 py-1.5 text-sm text-white"
+        >
+          <span>Saved</span>
+          <span className="rounded-full border border-gray-600 px-2 py-0.5 text-xs">
+            {saved.length}
+          </span>
+        </Link>
   </div>
 </div>
     );

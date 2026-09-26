@@ -5,7 +5,7 @@ import BannerImg from "@/assets/banner.png";
 const Banner = () => {
   return (
 
-    <section className="py-10 md:py-16 flex items-center justify-center">
+    <section id="library" className="py-10 md:py-16 flex items-center justify-center w-full sm:w-auto">
 
     <div className=" container mx-auto  grid grid-cols-1 md:grid-cols-2 gap-4 items-center
     border border-gray-800 rounded-xl p-15 bg-[#0A0A0A]">
@@ -19,7 +19,26 @@ const Banner = () => {
           FitLog is a dark, no-nonsense gym companion: pick a lift, lock it into<br />
           today&apos;s plan, and watch the week&apos;s work add up.
         </p>
-        <button className="bg-[#C2F800] rounded-2xl py-2 px-6 text-black font-bold">BROWSE WORKOUTS</button>
+       <a
+  href="#library"
+  className="btn btn-primary bg-lime-400 text-black"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-4 w-4"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M5 12h14M12 5l7 7-7 7"
+    />
+  </svg>
+  BROWSE WORKOUTS
+</a>
       </div>
       <div className="flex justify-center md:justify-end">
         <Image src={BannerImg}
