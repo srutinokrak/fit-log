@@ -8,6 +8,8 @@ interface IWorkoutProps {
     workout : IWorkout
 }
 const SavedCard = ({workout}:IWorkoutProps) => {
+
+    const { removeSaved } = useContext(WorkoutsContext);
     return (
     <div   className="flex items-center gap-4 rounded-2xl border border-gray-800 bg-[#12151b] p-4">
 
@@ -49,10 +51,9 @@ const SavedCard = ({workout}:IWorkoutProps) => {
 
   
 
-
-    <button className="text-gray-500">
-      ×
-    </button>
+<button onClick={() => removeSaved(workout.id)}>
+  ×
+</button>
   </div>
 
 </div>

@@ -10,7 +10,7 @@ interface IWorkoutContext {
         saved: IWorkout[]
         setSaved:React.Dispatch<React.SetStateAction<IWorkout[]>>;
         removePlan : (id : number) => void;
-        
+        removeSaved: (id: number) => void;
 }
 
 export const WorkoutsContext = createContext<IWorkoutContext>({
@@ -19,6 +19,7 @@ export const WorkoutsContext = createContext<IWorkoutContext>({
      saved: [],
      setSaved: () => {},
      removePlan: () => {},
+     removeSaved: () => {}
 })
 
 
@@ -29,6 +30,12 @@ const WorkoutProvider = ({children}:{children: ReactNode}) => {
     previousPlan.filter((workout) => workout.id !== id)
   );
     }
+    const removeSaved = (id: number) => {
+  setSaved((previousSaved) =>
+    previousSaved.filter((workout) => workout.id !== id)
+  );
+};
+
 
     const [todaysPlan, setTodaysPlan] =useState<IWorkout[]>([])
     const [saved,setSaved] = useState<IWorkout[]>([])
