@@ -45,7 +45,7 @@ const MyPlane = () => {
         Cap of five lifts for today. Finish them, then load more.
       </p>
 
-      <div className="mb-8 mt-4 grid grid-cols-1 rounded-2xl border border-gray-800 bg-[#12151b] md:grid-cols-3">
+      <div className="mb-8 mt-4 grid grid-cols-1 rounded-2xl border border-gray-800 bg-[#12151b] md:grid-cols-3 w-full">
         <div className="border-b border-gray-800 p-6 md:border-b-0 md:border-r">
           <p className="text-sm text-gray-500">Exercises</p>
 
@@ -67,7 +67,7 @@ const MyPlane = () => {
 
           <p className="mt-1 text-4xl font-bold">{totalCalories}</p>
         </div>
-      </div>
+      </div>  
 
       <div className="tabs tabs-lift">
         <input
@@ -126,7 +126,7 @@ const MyPlane = () => {
           )}
         </div>
 
-        <div className="ml-300 justify-end flex items-center  gap-2 text-sm text-gray-400">
+        <div className="justify-end absolute right-2 md:right-27.5 flex   items-center  gap-2 text-sm text-gray-400">
           <span className="whitespace-nowrap">Sort By</span>
 
           <select

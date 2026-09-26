@@ -27,7 +27,7 @@ const Workouts = async() => {
         <section className= "container mx-auto px-4 py-16">
 
        <div className="mb-8">
-        <h2 className="text-3xl font-black tracking-tight text-white">
+        <h2 className="text-3xl font-black tracking-tight text-white" >
           THE LIBRARY
         </h2>
 
@@ -36,7 +36,7 @@ const Workouts = async() => {
         </p>
       </div>
          
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"   >
                 {workoutsData.map((workout:IWorkout,ind:number)=>{
                 return  (
                    <WorkoutCard key={ind} workout={workout} />

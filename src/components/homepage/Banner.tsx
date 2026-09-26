@@ -5,7 +5,7 @@ import BannerImg from "@/assets/banner.png";
 const Banner = () => {
   return (
 
-    <section id="library" className="py-10 md:py-16 flex items-center justify-center w-full sm:w-auto">
+    <section  className="py-10 md:py-16 flex items-center justify-center w-full sm:w-auto">
 
     <div className=" container mx-auto  grid grid-cols-1 md:grid-cols-2 gap-4 items-center
     border border-gray-800 rounded-xl p-15 bg-[#0A0A0A]">

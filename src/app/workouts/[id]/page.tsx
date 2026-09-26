@@ -1,3 +1,4 @@
+import Custom404 from '@/app/not-found';
 import PlanButton from '@/components/workoutDetails/PlanButton';
 import SavedButton from '@/components/workoutDetails/SavedButton';
 import { IWorkout } from '@/types/workout.types';
@@ -22,14 +23,19 @@ const getWorkouts = async() => {
 
 }
 
+
+
 const WorkoutDetailesPage = async({params}:IWorkoutDetailsPage) => {
   const {id} = await params;
 
   const workoutsData:IWorkout[] = await getWorkouts()
 
   const workout = workoutsData.find((workout:IWorkout)=> String(workout.id)===String(id)) as IWorkout
+  console.log(workout);
 
-  console.log( workout, 'workout');
+  if(!workout){
+    return <Custom404/>
+  }
   
   const details = [
     { label: 'EQUIPMENT', value: workout.equipment },

@@ -14,7 +14,7 @@ const WorkoutCard = ({workout} : IWorkoutPops) => {
 
       <Link href={`/workouts/${workout.id}`}>
         <div
-  key={workout.id}
+  key={workout.id}  id="library"  
   className="group overflow-hidden  rounded-xl border border-gray-800 bg-[#17181d] transition duration-300 hover:-translate-y-1 hover:border-lime-400/50"
 >
   {/* Image */}
@@ -30,7 +30,7 @@ const WorkoutCard = ({workout} : IWorkoutPops) => {
   </div>
 
   {/* Card Content */}
-  <div className="p-5">
+  <div className="p-5" >
     {/* Muscle Groups */}
     <div className="mb-3 flex flex-wrap gap-2">
       {workout.muscleGroups.map((muscle: string) => (
