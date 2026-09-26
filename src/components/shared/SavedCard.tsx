@@ -1,7 +1,9 @@
+import { WorkoutsContext } from '@/context/Workoutscontext';
 import { IWorkout } from '@/types/workout.types';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useContext } from 'react';
+import { toast } from 'react-toastify';
 
 
 interface IWorkoutProps {
@@ -51,9 +53,15 @@ const SavedCard = ({workout}:IWorkoutProps) => {
 
   
 
-<button onClick={() => removeSaved(workout.id)}>
-  ×
-</button>
+  <button
+      onClick={() => {
+        removeSaved(workout.id);
+        toast.success('Removed from saved');
+      }}
+      className="text-gray-500"
+    >
+      ×
+    </button>
   </div>
 
 </div>

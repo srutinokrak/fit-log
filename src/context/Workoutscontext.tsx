@@ -45,7 +45,8 @@ const WorkoutProvider = ({children}:{children: ReactNode}) => {
         setTodaysPlan,
         saved,
         setSaved,
-        removePlan
+        removePlan,
+        removeSaved
     }
 
     return (

@@ -1,8 +1,11 @@
 import { WorkoutsContext } from '@/context/Workoutscontext';
 import { IWorkout } from '@/types/workout.types';
+import { Check } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useContext } from 'react';
+import { toast } from 'react-toastify';
+
 
 
 interface IWorkoutProps {
@@ -11,6 +14,15 @@ interface IWorkoutProps {
 const MyplanCard = ({workout}:IWorkoutProps) => {
 
   const {removePlan} = useContext(WorkoutsContext)
+  const { todaysPlan, setTodaysPlan } = useContext(WorkoutsContext);
+
+  const handleMarkDone = () => {
+  setTodaysPlan(todaysPlan.filter((item) => item.id !== workout.id));
+  toast.success('Workout marked as done');
+};
+
+
+
     return (
     <div   className="flex items-center gap-4 rounded-2xl border border-gray-800 bg-[#12151b] p-4">
 
@@ -50,13 +62,22 @@ const MyplanCard = ({workout}:IWorkoutProps) => {
     </button>
     </Link>
 
-    <button className="rounded-full bg-lime-400 px-5 py-2 text-sm text-black">
-      ✓ Mark as Done
-    </button>
-
-    <button   onClick={() => removePlan(workout.id)} className="text-gray-500">
-      ×
-    </button>
+    <button
+  onClick={handleMarkDone}
+  className="flex items-center gap-2 rounded-full bg-lime-400 px-5 py-2 text-sm text-black"
+>
+  <Check className="h-4 w-4" />
+  <span>Mark as Done</span>
+</button>
+     <button
+         onClick={() => {
+           removePlan(workout.id);
+           toast.success('Removed from Plan');
+         }}
+         className="text-gray-500"
+       >
+         ×
+       </button>
   </div>
 
 </div>
