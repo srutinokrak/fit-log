@@ -16,6 +16,29 @@ FitLog is designed for gym-goers who want a clean, focused way to discover and m
 - Lucide React
 - React Toastify
 
+## Dependencies
+
+### Runtime Dependencies
+
+- `lucide-react`: `^1.48.0`
+- `next`: `16.3.6`
+- `react`: `19.2.8`
+- `react-dom`: `19.2.8`
+- `react-icons`: `^5.7.0`
+- `react-toastify`: `^11.1.0`
+
+### Development Dependencies
+
+- `@tailwindcss/postcss`: `^4`
+- `@types/node`: `^20`
+- `@types/react`: `^19`
+- `@types/react-dom`: `^19`
+- `daisyui`: `^5.7.43`
+- `eslint`: `^9`
+- `eslint-config-next`: `16.3.6`
+- `tailwindcss`: `^4`
+- `typescript`: `^5`
+
 ## Key Features
 
 1. Responsive workout library
